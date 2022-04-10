@@ -1,14 +1,13 @@
-import { useState } from "react";
 import useForm from "../Hook/useForm";
 
-export default function FormCreateUser() {
+export default function FormLoginUser() {
 
-    const { handleChange, values, handleCreateUser } = useForm();
+    const { handleChange, handleDeconnexion, values, handleLogin } = useForm();
 
     return (
         <>
-            <h1 className="text-center">Register</h1>
-            <form action="" className="container" onSubmit={handleCreateUser}>
+            <h1 className="text-center">Login</h1>
+            <form action="" className="container" onSubmit={handleLogin}>
                 <div className="mb-3">
                     <label htmlFor="name" className="form-label">Username</label>
                     <input
@@ -29,8 +28,10 @@ export default function FormCreateUser() {
                         onChange={handleChange}
                     ></input>
                 </div>
-                <button className="btn btn-primary btn-lg btn-block">Register</button>
+                <button className="btn btn-primary btn-lg btn-block">Login</button>
+                <button className="btn btn-danger btn-lg btn-block" onClick={handleDeconnexion}>Deconnexion</button>
             </form>
+
         </>
     );
 }
