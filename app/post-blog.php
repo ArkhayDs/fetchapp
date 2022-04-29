@@ -19,6 +19,8 @@ $token = str_replace('Bearer ', '', getallheaders()['Authorization'] ?? '') ?? '
 $blogTitle = $_POST['title'] ?? '';
 $blogContent = $_POST['content'] ?? '';
 
+var_dump(getallheaders());
+
 if (!$token) {
     echo json_encode([
         'status' => 'error',
